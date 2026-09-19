@@ -6,7 +6,17 @@ The goal is simple: give agents better design judgment before they touch the cod
 
 ## Install
 
-Once the npm package is published, install it globally for your coding agent with one command:
+### Codex
+
+```bash
+npx izzy-ui-skill --codex
+```
+
+Installs globally to:
+
+```text
+~/.agents/skills/izzy-ui/
+```
 
 ### Claude Code
 
@@ -14,27 +24,33 @@ Once the npm package is published, install it globally for your coding agent wit
 npx izzy-ui-skill --claude
 ```
 
-Installs to:
+Installs globally to:
 
 ```text
 ~/.claude/skills/izzy-ui/
 ```
 
-### Codex
+### Claude web / desktop
 
 ```bash
-npx izzy-ui-skill --codex
+npx izzy-ui-skill --claude-upload
 ```
 
-Installs to:
+This creates:
 
 ```text
-~/.agents/skills/izzy-ui/
+izzy-ui-claude.zip
 ```
 
-No extra dependencies are required beyond Node.js 18+.
+Then in Claude:
 
-Until the npm package is published, the repository can still be copied manually into the matching skill folder.
+```text
+Customize → Skills → Add → Create skill → Upload a skill
+```
+
+Upload the generated ZIP and enable **Izzy UI**.
+
+No extra dependencies are required beyond Node.js 18+.
 
 ## What it focuses on
 
@@ -80,7 +96,7 @@ izzy-ui-skill/
 After installation, ask your agent naturally:
 
 ```text
-Build a clean dashboard for my Discord bot using the izzy UI style.
+Build a clean dashboard for my Discord bot using the Izzy UI skill.
 ```
 
 ```text
