@@ -4,6 +4,38 @@ An opinionated UI/UX skill for coding agents that helps them build clean, intent
 
 The goal is simple: give agents better design judgment before they touch the code.
 
+## Install
+
+Once the npm package is published, install it globally for your coding agent with one command:
+
+### Claude Code
+
+```bash
+npx izzy-ui-skill --claude
+```
+
+Installs to:
+
+```text
+~/.claude/skills/izzy-ui/
+```
+
+### Codex
+
+```bash
+npx izzy-ui-skill --codex
+```
+
+Installs to:
+
+```text
+~/.agents/skills/izzy-ui/
+```
+
+No extra dependencies are required beyond Node.js 18+.
+
+Until the npm package is published, the repository can still be copied manually into the matching skill folder.
+
 ## What it focuses on
 
 - strong visual hierarchy
@@ -24,7 +56,10 @@ This is not a giant design database, component library, or framework. It stays i
 izzy-ui-skill/
 ├── README.md
 ├── LICENSE
+├── package.json
 ├── SKILL.md
+├── bin/
+│   └── izzy-ui-skill.js
 ├── rules/
 │   ├── accessibility.md
 │   ├── anti-vibecode.md
@@ -40,27 +75,9 @@ izzy-ui-skill/
     └── prompts.md
 ```
 
-## Install
-
-Use the repository as a skill folder for your coding agent.
-
-### Codex / universal agents
-
-```text
-.agents/skills/izzy-ui/
-```
-
-### Claude Code
-
-```text
-.claude/skills/izzy-ui/
-```
-
-Copy the repository contents into the matching folder and keep `SKILL.md` at the skill root.
-
 ## Usage
 
-You should be able to ask naturally:
+After installation, ask your agent naturally:
 
 ```text
 Build a clean dashboard for my Discord bot using the izzy UI style.
@@ -74,8 +91,12 @@ Redesign this landing page so it feels intentional and not AI-generated.
 Make this responsive without changing the product's current behavior.
 ```
 
-The agent should read `SKILL.md` first, then use the supporting rules only when relevant.
+The agent reads `SKILL.md` first and uses the supporting rules when relevant.
 
 ## Philosophy
 
 Good UI is not about adding more. It is about making the right things clear, useful, consistent, and intentional.
+
+## License
+
+MIT
